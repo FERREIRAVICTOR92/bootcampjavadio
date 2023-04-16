@@ -1,0 +1,119 @@
+import java.util.ArrayList;
+
+public class Bootcamp {
+    private String nome;
+    private String descricao;
+    private int duracao;
+    private String nivelDificuldade;
+    private double preco;
+    private String dataInicio;
+    private String localizacao;
+    private ArrayList<Cursos> cursos;
+    private ArrayList<Mentorias> mentorias;
+    private ArrayList<Devs> devs;
+
+    public Bootcamp(String nome, String descricao, int duracao, String nivelDificuldade, double preco, String dataInicio, String localizacao) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.duracao = duracao;
+        this.nivelDificuldade = nivelDificuldade;
+        this.preco = preco;
+        this.dataInicio = dataInicio;
+        this.localizacao = localizacao;
+        this.cursos = new ArrayList<>();
+        this.mentorias = new ArrayList<>();
+        this.devs = new ArrayList<>();
+    }
+
+    public void adicionar_curso(Cursos curso) {
+        this.cursos.add(curso);
+    }
+
+    public void remover_curso(Cursos curso) {
+        this.cursos.remove(curso);
+    }
+
+    public void adicionar_mentoria(Mentorias mentoria) {
+        this.mentorias.add(mentoria);
+    }
+
+    public void remover_mentoria(Mentorias mentoria) {
+        this.mentorias.remove(mentoria);
+    }
+
+    public void adicionar_dev(Devs dev) {
+        this.devs.add(dev);
+    }
+
+    public void remover_dev(Devs dev) {
+        this.devs.remove(dev);
+    }
+
+    public void listar_cursos() {
+        for (Cursos curso : cursos) {
+            System.out.println(curso.getNome());
+        }
+    }
+
+    public void listar_mentorias() {
+        for (Mentorias mentoria : mentorias) {
+            System.out.println(mentoria.getNome());
+        }
+    }
+
+    public void listar_devs() {
+        for (Devs dev : devs) {
+            System.out.println(dev.getNome());
+        }
+    }
+
+    public void ver_detalhes() {
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Descrição: " + this.descricao);
+        System.out.println("Duração: " + this.duracao);
+        System.out.println("Nível de Dificuldade: " + this.nivelDificuldade);
+        System.out.println("Preço: " + this.preco);
+        System.out.println("Data de Início: " + this.dataInicio);
+        System.out.println("Localização: " + this.localizacao);
+    }
+}
+
+public class Cursos {
+    private String nome;
+    private String descricao;
+    private int duracao;
+    private double preco;
+
+    public Cursos(String nome, String descricao, int duracao, double preco) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.duracao = duracao;
+        this.preco = preco;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public String getDescricao() {
+        return this.descricao;
+    }
+
+    public int getDuracao() {
+        return this.duracao;
+    }
+
+    public double getPreco() {
+        return this.preco;
+    }
+}
+
+public class Mentorias {
+    private String nome;
+    private String descricao;
+    private String data;
+    private String horario;
+
+    public Mentorias(String nome, String descricao, String data, String horario) {
+        this.nome = nome;
+        this.descricao = descricao;
